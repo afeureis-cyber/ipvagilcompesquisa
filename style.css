@@ -1,0 +1,161 @@
+section{
+    background: white;
+    border-radius: 30px;
+    padding: 15px;
+    width: 1000px;
+    margin: auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.575);
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+
+.cornavbar{
+    background: darkred!important;
+}
+
+body{
+    background: rgb(199, 199, 199)
+}
+
+#botaocentro{
+    width: fit-content;
+    margin: auto;
+}
+
+@media print {
+    body * {
+      visibility: hidden;
+    }
+    #printSection,
+    #printSection * {
+      visibility: visible;
+    }
+    #printSection {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+     
+      font-size: x-large;
+      text-align: justify;
+      
+    }
+  }
+
+.botaocentralizado{
+    width: fit-content;
+    margin: auto;
+
+    margin-top: 20px;
+
+
+}
+
+.parcelamento{
+    font-size: large;
+    padding: 10px;
+}
+
+.par{
+  background: rgb(233, 230, 230);
+}
+
+.espacomaior{
+  padding: 20px;
+  background: rgb(246, 243, 224);
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+
+.espacoform{
+  padding: 50px;
+}
+
+.espacolinha{
+  margin-top: 30px;
+}
+
+.avisocontrato{
+  width: fit-content;
+  margin: auto;
+  
+  color: red;
+  padding: 2px;
+  border-radius: 5px;
+}
+
+.botaocentralizado2{
+  width: fit-content;
+  margin: auto;
+  color: grey;
+
+ 
+
+
+}
+
+.formfundo{
+  background: rgb(238, 237, 237);
+  margin-top: 10px;
+  border-radius: 30px;
+
+}
+
+.copyright {
+	
+	text-align: center;
+	color: grey;
+	padding: 20px;
+	font-family: "Montserrat", calibri;
+}
+
+.aviso{
+  color: red;
+}
+
+.login{
+  background: white;
+  border-radius: 30px;
+  padding: 15px;
+  width: 300px;
+  margin: auto;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.575);
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+}
+
+.hidden {
+  display: none;
+}
+
+input{
+  display: block;
+
+
+}
+
+.show {
+  display: block;
+
+}
+
+
+
+#whatsapp{
+	position:fixed;
+	bottom:35px;
+	left:40px;
+}
+
+#botaocontrato:hover{
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+.usuariobranco{
+
+  color: white;
+}

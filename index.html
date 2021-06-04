@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>IPVAgil</title>
+		<link rel="stylesheet" href="reset.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<link rel="stylesheet" href="style.css">
+	
+
+
+	</head>
+
+	<body>
+		
+		
+
+	
+
+
+			<header>
+				<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary cornavbar">
+					<a class="navbar-brand" href="#" id="titulo">IPVAgil</a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+					  <span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarNavDropdown">
+					  <ul class="navbar-nav">
+						
+						<li class="nav-item dropdown">
+						  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Faixas
+						  </a>
+						  <div class="dropdown-menu espacomaior" aria-labelledby="navbarDropdownMenuLink">
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="regiao" id="exampleRadios1" value="option1" checked>
+								<label class="form-check-label" for="exampleRadios1">
+								  Faixa 0
+								</label>
+							  </div>
+							  <div class="form-check">
+								<input class="form-check-input" type="radio" name="regiao" id="exampleRadios2" value="option2">
+								<label class="form-check-label" for="exampleRadios2">
+								  Faixa 1
+								</label>
+							  </div>
+							  <div class="form-check">
+								<input class="form-check-input" type="radio" name="regiao" id="exampleRadios3" value="option3">
+								<label class="form-check-label" for="exampleRadios3">
+								  Faixa 2
+								</label>
+							  </div>
+							 <div class="form-check">
+								<input class="form-check-input" type="radio" name="regiao" id="exampleRadios4" value="option4">
+								<label class="form-check-label" for="exampleRadios4">
+								  Faixa 3
+								</label>
+							  </div>
+							  <div class="form-check">
+								<input class="form-check-input" type="radio" name="regiao" id="exampleRadios5" value="option5">
+								<label class="form-check-label" for="exampleRadios5">
+								  Faixa 4
+								</label>
+							  </div>
+							  <div class="form-check">
+								<input class="form-check-input" type="radio" name="regiao" id="exampleRadios6" value="option6">
+								<label class="form-check-label" for="exampleRadios6">
+								  Faixa 5
+								</label>
+							  </div>
+						  </div>
+						</li>
+					  </ul>
+					</div>
+					<div class="center usuariobranco">Olá Despachante Leandro - </div>
+					<a href="https://docs.google.com/spreadsheets/d/15BUDRRo8meQQ6BuBRLUcDWhKFsVayve6yOnrJ--2YCY/edit?usp=sharing" target="_blank"><img src="botaocontrato.png" alt="" id="botaocontrato"> </a>
+				  </nav>
+			</header>
+
+		
+
+		<div class="container">
+
+			<div class="row">
+
+				<div class="col">
+
+					<hr>
+						
+						
+					<form id="formValor">
+
+						<h3>Simulação IPVAgil</h3>
+
+						
+	
+						<div class="form-row">
+							<div class="form-group col-md-5">
+								<label for="exampleInputEmail1"></label>
+								<input type="number" name="valor" class="form-control" required placeholder="Coloque o valor aqui">
+								<small>Insira o valor do orçamento</small>
+							</div>
+	
+							<div class="form-group col-md-2">
+								<label for="exampleInputEmail1"></label>
+									<input type="checkbox" class="cb" data-id="dinheiro" id="exampleCheck1" >
+									<small>Dinheiro</small>
+									
+									
+									
+								
+							</div>
+
+							<div class="form-group col-md-5">
+								<label for="exampleInputEmail1"></label>
+									
+									<input type="number" data-id="dinheiro" class="form-control pegardinheiro"  name="dinheiro" id="exampleCheck1" disabled>
+									<small>Valor em dinheiro, habilite o campo</small>
+									
+								
+							</div>
+							
+						</div>
+	
+	
+						<button type="submit" id="calcularValor" class="btn btn-primary bg-warning border-0">Simular</button>
+					</form>
+	
+			
+		
+
+			
+
+				<table class="table table-striped justify-content-center">
+				<thead>
+					<tr>
+					<th scope="col">Valor no cartão</th>
+					<th scope="col">Vezes</th>
+					<th scope="col">Parcela</th>
+					<th scope="col">Remuneração</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+					<td id="info-dozevezes">0</td>
+					<td>12x</td>
+					<td id="infopres-dozevezes">0</td>
+					<td id="com-dozevezes">0</td>
+					</tr>
+					<tr>
+					<td id="info-oncevezes">0</td>
+					<td>11x</td>
+					<td id="infopres-oncevezes">0</td>
+					<td id="com-oncevezes">0</td>
+					</tr>
+					<tr>
+					<td id="info-dezvezes">0</td>
+					<td>10x</td>
+					<td id="infopres-dezvezes">0</td>
+					<td id="com-dezvezes">0</td>
+					</tr>
+					<tr>
+					<td id="info-novevezes">0</td>
+					<td>9x</td>
+					<td id="infopres-novevezes">0</td>
+					<td id="com-novevezes">0</td>
+					</tr>
+					<tr>
+					<td id="info-oitovezes">0</td>
+					<td>8x</td>
+					<td id="infopres-oitovezes">0</td>
+					<td id="com-oitovezes">0</td>
+					</tr>
+					<tr>
+					<td id="info-setevezes">0</td>
+					<td>7x</td>
+					<td id="infopres-setevezes">0</td>
+					<td id="com-setevezes">0</td>
+					</tr>
+					<tr>
+					<td id="info-seisvezes">0</td>
+					<td>6x</td>
+					<td id="infopres-seisvezes">0</td>
+					<td id="com-seisvezes">0</td>
+					</tr>
+					<tr>
+					<td id="info-cincovezes">0</td>
+					<td>5x</td>
+					<td id="infopres-cincovezes">0</td>
+					<td id="com-cincovezes">0</td>
+					</tr>
+					<tr>
+					<td id="info-quatrovezes">0</td>
+					<td>4x</td>
+					<td id="infopres-quatrovezes">0</td>
+					<td id="com-quatrovezes">0</td>
+					</tr>
+					<tr>
+					<td id="info-tresvezes">0</td>
+					<td>3x</td>
+					<td id="infopres-tresvezes">0</td>
+					<td id="com-tresvezes">0</td>
+					</tr>
+					<tr>
+					<td id="info-doisvezes">0</td>
+					<td>2x</td>
+					<td id="infopres-doisvezes">0</td>
+					<td id="com-doisvezes">0</td>
+					</tr>
+					<tr>
+					<td id="info-umvezes">0</td>
+					<td>1x</td>
+					<td id="infopres-umvezes">0</td>
+					<td id="com-umvezes">0</td>
+					</tr>
+					<td id="info-debito">0</td>
+					<td>Débito</td>
+					<td id="infopres-debito">0</td>
+					<td id="com-debito">0</td>
+					</tr>
+					
+
+				</tbody>
+				</table>
+
+				
+					<!-- Modal grande -->
+					<div class="botaocentralizado"><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-xl">Imprimir Simulação</button></div>
+				
+
+				<div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+					<div class="modal-dialog modal-xl">
+						<div class="modal-content">
+
+							<div class="botaocentralizado">
+								<button id="btnPrint">Clique aqui para imprimir a simulação</button>
+							</div>
+
+							<hr />
+								<div id="printSection">
+								<div id="printThis">
+
+
+							
+									<table class="table table-striped justify-content-center">
+
+										<thead>
+											<tr>
+											
+											<th scope="col">Vezes</th>
+											<th scope="col">Prestação</th>
+											<th scope="col">Valor</th>
+											
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+											
+											<td>12x</td>
+											<td id="tabcliente-dozevezes">0</td>
+											<td id="total-doze">0</td>
+											
+											</tr>
+											<tr>
+											
+											<td>11x</td>
+											<td id="tabcliente-oncevezes">0</td>
+											<td id="total-once">0</td>
+											
+											</tr>
+											<tr>
+											
+											<td>10x</td>
+											<td id="tabcliente-dezvezes">0</td>
+											<td id="total-dez">0</td>
+											</tr>
+											<tr>
+											
+											<td>9x</td>
+											<td id="tabcliente-novevezes">0</td>
+											<td id="total-nove">0</td>
+											</tr>
+											<tr>
+											
+											<td>8x</td>
+											<td id="tabcliente-oitovezes">0</td>
+											<td id="total-oito">0</td>
+											</tr>
+											<tr>
+											
+											<td>7x</td>
+											<td id="tabcliente-setevezes">0</td>
+											<td id="total-sete">0</td>
+											</tr>
+											<tr>
+											
+											<td>6x</td>
+											<td id="tabcliente-seisvezes">0</td>
+											<td id="total-seis">0</td>
+											</tr>
+											<tr>
+											
+											<td>5x</td>
+											<td id="tabcliente-cincovezes">0</td>
+											<td id="total-cinco">0</td>
+											</tr>
+											<tr>
+											
+											<td>4x</td>
+											<td id="tabcliente-quatrovezes">0</td>
+											<td id="total-quatro">0</td>
+											</tr>
+											<tr>
+											
+											<td>3x</td>
+											<td id="tabcliente-tresvezes">0</td>
+											<td id="total-tres">0</td>
+											</tr>
+											<tr>
+											
+											<td>2x</td>
+											<td id="tabcliente-doisvezes">0</td>
+											<td id="total-dois">0</td>
+											</tr>
+											<tr>
+											
+											<td>1x</td>
+											<td id="tabcliente-umvezes">0</td>
+											<td id="total-um">0</td>
+											
+											
+											</tr>
+
+											<tr>
+											
+												<td>Débito</td>
+												<td id="tabcliente-debito">0</td>
+												<td id="total-debito">0</td>
+												
+												
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								</div>
+								
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+									
+								  </div>
+
+					
+						</div>
+					</div>
+				</div>
+
+				<hr>
+
+					
+
+
+				</div>
+				<div class="col">
+
+					<hr>
+
+
+					<h3>Pesquisa Veículo</h3>
+
+					<form >
+						<div class="mb-3 justify-content-center">
+						  <label for="exampleInputEmail1" class="form-label">Placa</label>
+						  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+						  <div id="emailHelp" class="form-text">Coloque a placa sem traço</div>
+						</div>
+						<div class="mb-3">
+						  <label for="exampleInputPassword1" class="form-label">Renavam</label>
+						  <input type="text" class="form-control" id="exampleInputPassword1">
+						</div>
+						
+						<div class="botaocentralizado"><button type="submit" class="btn btn-primary">Pesquisa</button></div>
+					  </form>
+
+					  <h2 class="result"></h2>
+
+
+
+				</div>
+
+
+
+			</div>
+
+
+
+
+		</div>
+
+		<hr>
+	
+				<div class="container">
+
+					<div class="row">
+						<div class="col">
+
+							<h6>Preencha dos dados do contrato:</h6>
+	
+					<form id="formDados">
+	
+	
+					<div class="form-group" hidden>
+						<label for="exampleFormControlSelect1">Valor sem dinheiro</label>
+						<select class="form-control" id="valSimula" name="simulado">
+						  <option id="simu"></option>
+				  
+						</select>
+	
+					</div>
+	
+					<div class="form-group">
+						<label for="exampleFormControlSelect1">Valor em dinheiro:</label>
+						<select class="form-control" id="valDinheiro" name="dinheirosimulador">
+						  <option id="dinu"></option>
+				  
+						</select>
+	
+					</div>
+	
+					<div class="form-group" hidden>
+						<label for="exampleFormControlSelect1">Total</label>
+						<select class="form-control" id="valTotal" name="totalsimulador">
+						  <option id="totu"></option>
+				  
+						</select>
+	
+					</div>
+
+
+						</div>
+
+
+
+					</div>
+				
+	
+				
+				
+				
+
+					<div class="row">
+
+					<div class="col">
+
+
+						<div class="form-row">
+							<div class="form-group col-md-4">
+							  <label for="inputPlaca">Placa</label>
+							  <input type="text" class="form-control" id="inputPlaca" placeholder="Coloque a placa do veículo" name="Placa" >
+							</div>
+							<div class="form-group col-md-4">
+								<label for="inputRenavam">RENAVAM</label>
+								<input type="text" class="form-control" id="inputRenavam" placeholder="Coloque a placa do veículo" name="RENAVAM">
+							</div>
+							<div class="form-group col-md-4">
+								<label for="inputEstado">Estado</label>
+								<input id="inputEstado" class="form-control" name="Estado" placeholder="Coloque o Estado" id="inputEstado" >
+								
+							</div>
+						</div>
+
+
+					</div>
+
+
+
+
+					</div>
+	
+	
+	
+	
+					
+
+				
+
+
+
+
+	
+					<div class="form-row">
+						<div class="form-group col-md-6">
+						  <label for="inputNome">Nome</label>
+						  <input type="text" class="form-control" id="inputNome" placeholder="Coloque o nome do proprietário do cartão" name="Nome">
+						</div>
+						<div class="form-group col-md-6">
+						  <label for="inputCPF">CPF</label>
+						  <input type="text" class="form-control" id="inputCPF" placeholder="Coloque o CPF do proprietário do cartão" name="CPF">
+						</div>
+					</div>
+	
+				
+					<div class="form-row">
+						<div class="form-group col-md-6">
+						  <label for="inputMultas">Multas/IPVA/Licenciamentos(R$)</label>
+						  <input type="number" class="form-control" id="inputMulta" placeholder="Coloque o valor dos tributos somados" name="Tributos">
+						</div>
+	
+	
+						<div class="form-group col-md-6">
+							<label for="inputFormadePagamento">Pagamento <strong>Importante selecionar a forma correta.</strong></label>
+							<select id="inputPagamento" class="form-control" name="Pagamento" >
+							  <option value="0x">Selecione uma forma de pagamento</option>
+							  <option id="opt12" value="12x">12x</option>	
+							  <option class="par" id="opt11" value="11x">11x</option>
+							  <option id="opt10" value="10x">10x</option>
+							  <option class="par" id="opt9" value="9x">09x</option>
+							  <option id="opt8" value="8x">08x</option>
+							  <option id="opt7" class="par" value="7x">07x</option>
+							  <option id="opt6" value="6x">06x</option>
+							  <option id="opt5" class="par" value="5x">05x</option>
+							  <option id="opt4" value="4x">04x</option>
+							  <option id="opt3" class="par" value="3x">03x</option>
+							  <option id="opt2" value="2x">02x</option>
+							  <option id="opt1" class="par" value="1x">01x</option>
+							  <option id="optdeb" value="debito">Débito</option>
+							  
+	
+							</select>
+						</div>
+						
+					</div>
+	
+					<div class="form-group">
+						<label for="exampleFormControlTextarea1">Observações</label>
+						<textarea class="form-control" id="inputText" rows="3" name="Observações"></textarea>
+					</div>
+
+					
+	
+				
+	
+					
+	
+	
+					
+	
+	
+				
+					
+	
+				
+	
+				<div class="botaocentralizado"><button type="submit" class="btn btn-primary" id="enviaDados">Gerar contrato</button></div>
+	
+				</form>
+	
+				<div class="avisocontrato" id="contnao">Contrato não gerado ainda</div>
+				
+	
+				
+	
+	
+			
+	
+				
+	
+				<!-- Modal grande -->
+					<div class="botaocentralizado"><button type="button" class="btn btn-warning"  data-toggle="modal" data-target=".bd-example-modal-lg">Imprime contrato</button></div>
+	
+					<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+	
+							<div class="botaocentralizado">
+								<button id="btnPrint2">Clique aqui para imprimir o contrato</button>
+							</div>
+	
+							<hr />
+								<div id="printSection">
+								<div id="printThis">
+	
+	
+									<div id="msg">O contrato ainda não foi gerado!</div>
+	
+								
+	
+							
+									
+	
+										
+								</div>
+								</div>
+						...
+						</div>
+					</div>
+					</div>
+
+					
+					
+	
+					
+	
+					<form class="espacoform formfundo hidden" method="post" action="successpdv001"  name="pdv001" netlify id="ma">
+	
+						<div class="botaocentralizado2"><h3>Clique em finalizar envio pra confirmar contrato</h3></div>
+	
+						
+						<div class="form-group" hidden >
+							<label for="exampleFormControlSelect1">Despachante</label>
+							<select class="form-control" id="placaEnvio" name="Despachante">
+							  <option>Leandro IPVAgil</option>
+					  
+							</select>
+						  </div>
+						  <!--Colocar nome do Despachante no campo option acima-->
+						
+						
+						<div class="form-group" hidden >
+						  <label for="exampleFormControlSelect1">Placa</label>
+						  <select class="form-control" id="placaEnvio" name="Placa">
+							<option id="pla" class="par"></option>
+					
+						  </select>
+						</div>
+	
+						<div class="form-group" hidden >
+							<label for="exampleFormControlSelect1">Renavam</label>
+							<select class="form-control" id="placaEnvio" name="Renavam">
+							  <option id="ren"></option>
+					  
+							</select>
+						</div>
+	
+						<div class="form-group" hidden >
+							<label for="exampleFormControlSelect1">Estado</label>
+							<select class="form-control" id="placaEnvio" name="Estado">
+							  <option id="est"></option>
+					  
+							</select>
+						</div>
+	
+						<div class="form-group" hidden >
+							<label for="exampleFormControlSelect1">Nome</label>
+							<select class="form-control" id="placaEnvio" name="Nome">
+							  <option id="nom"></option>
+					  
+							</select>
+						</div>
+	
+	
+						<div class="form-group" hidden >
+							<label for="exampleFormControlSelect1">CPF</label>
+							<select class="form-control" id="placaEnvio" name="CPF">
+							  <option id="cpf"></option>
+					  
+							</select>
+						</div>
+	
+	
+						
+	
+	
+						<div class="form-group" hidden >
+							<label for="exampleFormControlSelect1">Observações</label>
+							<select class="form-control"  name="Observacoes">
+							  <option id="obs"></option>
+					  
+							</select>
+						</div>
+	
+	
+	
+					
+	
+						<div class="form-group" hidden >
+							<label for="exampleFormControlSelect1">Pagamento</label>
+							<select class="form-control"  name="Pagamento">
+							  <option id="pag"></option>
+					  
+							</select>
+						</div>
+	
+						
+	
+						
+	
+						
+	
+	
+						<div class="form-group" hidden >
+							<label for="exampleFormControlSelect1">Valor pra simular</label>
+							<select class="form-control" id="placaEnvio" name="Valor pra simular">
+							  <option id="valSim"></option>
+					  
+							</select>
+						</div>
+	
+	
+						<div class="form-group" hidden >
+							<label for="exampleFormControlSelect1">Pago em dinheiro</label>
+							<select class="form-control" id="placaEnvio" name="Valor pago em dinheiro">
+							  <option id="valDin"></option>
+					  
+							</select>
+						</div>
+	
+	
+						<div class="form-group" hidden >
+							<label for="exampleFormControlSelect1">Total Simulado</label>
+							<select class="form-control" id="placaEnvio" name="Valor Total Simulado (valor-dinheiro)">
+							  <option id="totSim"></option>
+					  
+							</select>
+						</div>
+	
+						<div class="form-group" hidden>
+							<label for="exampleFormControlSelect1">Valor para inserir na máquina</label>
+							<select class="form-control" id="placaEnvio" name="Valor colocado na máquina">
+							  <option id="maq"></option>
+					  
+							</select>
+						</div>
+	
+	
+	
+	
+	
+	
+						
+	
+						
+	
+	
+						<div class="form-group" hidden >
+							<label for="exampleFormControlSelect1">Valor da parcela</label>
+							<select class="form-control" id="placaEnvio" name="Valor da parcela">
+							  <option id="valPar"></option>
+					  
+							</select>
+						</div>
+	
+	
+					
+	
+						<div class="form-group" hidden >
+							<label for="exampleFormControlSelect1">Multa</label>
+							<select class="form-control" id="placaEnvio" name="Multas/IPVA/Licenciamento">
+							  <option id="mul"></option>
+					  
+							</select>
+						</div>
+	
+	
+	
+						<div class="form-group" hidden >
+							<label for="exampleFormControlSelect1">Comissão despachante</label>
+							<select class="form-control" id="placaEnvio" name="Comissão Despachante">
+							  <option id="com"></option>
+					  
+							</select>
+						</div>
+	
+	
+						<div class="form-group" hidden >
+							<label for="exampleFormControlSelect1">Serviço cobrado despachante</label>
+							<select class="form-control" id="placaEnvio" name="Serviço do despachante">
+							  <option id="serTot"></option>
+					  
+							</select>
+						</div>
+	
+						<div class="form-group" hidden >
+							<label for="exampleFormControlSelect1">Pagamento Total Despachante</label>
+							<select class="form-control" id="placaEnvio" name="Pagamento total (serviço + comissão)">
+							  <option id="pagades"></option>
+					  
+							</select>
+						</div>
+	
+	
+						<div class="form-group" hidden >
+							<label for="exampleFormControlSelect1">Contrato</label>
+							<select class="form-control"  name="Contrato">
+							  <option id="con"></option>
+					  
+							</select>
+						</div>
+
+						<div class="form-group" hidden >
+							<label for="exampleFormControlSelect1">Data</label>
+							<select class="form-control"  name="Data">
+							  <option id="dat"></option>
+					  
+							</select>
+						</div>
+	
+	
+					
+	
+						<div class="botaocentralizado"><button type="submit" class="btn btn-success" id="enviaDados">Finalizar Envio</button></div>
+	
+	
+						
+					</form>
+
+					<div id="whatsapp">
+						<a href="https://api.whatsapp.com/send?phone=5519999184813&text=Ol%C3%A1%20IPVAgil!" id="whatsapp"><img src="WHATSBUTTON.png" alt=""></a>
+					</div>
+	
+					
+	
+				
+	
+	
+	
+			</section>
+	
+
+
+
+
+
+		</div>
+
+		
+
+	
+
+		
+
+	
+	
+
+
+		
+		
+
+		
+		<footer>	
+
+			<p class="copyright">&copy; Copyright Ágil Intermeios 2020</p>
+			
+		
+					
+		</footer>
+
+		<!-- The core Firebase JS SDK is always required and must be listed first -->
+
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+		<script src="js/app.js"></script>
+
+		<script src="js/authentication.js"></script>
+
+		
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+		
+
+		<!-- TODO: Add SDKs for Firebase products that you want to use
+			https://firebase.google.com/docs/web/setup#available-libraries -->
+		<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-analytics.js"></script>
+
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+		
+
+		<script src="t1.js"></script>
+
+		<script src="appcurso.js"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.1.1/jspdf.umd.min.js"></script>
+		
+
+		
+
+		
+				
+		
+	</body>
+</html>
