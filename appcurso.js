@@ -1,55 +1,84 @@
+/*const result = document.querySelector('.result')
 
-//const result = document.querySelector('.result');
 
-//const fetchData = async () => {
-//try {
+function success(pos) {
 
- //const {data} = await axios.get('/.netlify/functions/1-hello');
-//console.log(data);
-    //result.textContent = data
+
+
+    const placa = `FQO0023`
+    const renavam = `01053051317`
+    const url = (`/.netlify/functions/1-hello`);
+
+    console.log(placa)
     
-//} catch (error) {
-    //console.log(erro.response);
-
-    
-//}
-    
-
-
-//}
-
-//fetchData()
-
-const formAPI = document.querySelector('.formAPI')
-const inPlaca = document.querySelector('.inPlaca')
-const inRenavam = document.querySelector('.inRenavam')
-const result = document.querySelector('.result');
-
-
-
-function success(pos){
-
-    formAPI.addEventListener('submit',(e)=>{
-        event.preventDefault()
-        let placa = inPlaca.value 
-        let renavam = inRenavam.value 
-        const options = {
-          method: 'GET',
-          mode: 'cors',
-          cache: 'defaut'
-        }
+  
+    fetch(url)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
 
         
+  
+        
+        
+        
+        console.log('data :', data);
+      });
+  
+  }
+  
+  function error(err) {
+    console.warn(`ERROR(${err.code}): ${err.message}`);
+  }*/
+
+const form = document.querySelector('.formAPI')
+const inPlaca = document.querySelector('.inPlaca')
+const inRenavam = document.querySelector('.inRenavam')
+const result = document.querySelector('.result')
+
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault()
+  const placa = inPlaca.value
+  const renavam = inRenavam.value
+  console.log(placa)
+  console.log(renavam)
+  getPlacaRenavam(placa, renavam)
+})
+
+async function getPlacaRenavam(placa, renavam) {
+  
+  try {
+    const { data } = await axios.post(`/.netlify/functions/1-hello`, {placa, renavam})
+   
     
 
-    fetch (`/netlify/functions/1-hello?placa=${placa}&renavam=${renavam}`, options)
-    .then(response=>response.json())
-    .then(data => show(data))
-
-  })
-  .catch(e => console.log('Deu erro'))
-
+    console.log('data :', data);
+    
+    
+    
+  } catch (error) {
+    console.log(error.response)
+  
+  }
 }
+
+  
+
+  
+
+
+
+  
+
+
+  
+
+
+
+
+
 
 
 
