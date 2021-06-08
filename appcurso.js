@@ -51,18 +51,46 @@ async function getPlacaRenavam(placa, renavam) {
   
   try {
     const { data } = await axios.post(`/.netlify/functions/1-hello`, {placa, renavam})
-   
+
+    const { ipva } = data.data;
+
+    const { multas_total } = data.data;
+
+    const { status_licenciamento } = data.data;
+
+    const { ultimo_licenciamento } = data.data;
+
+
+    result.innerHTML = `<hr> <h6>IPVA: ${ ipva }</h6>
+    <h6>Multas: ${ multas_total }</h6>
+    <h6>Status do Licenciamento: ${ status_licenciamento }</h6>
+    <h6>Último Licenciamento: ${ ultimo_licenciamento }</h6>`
+    
+    
     
 
+
     console.log('data :', data);
+
+    
+
+    
+   
+    
+    
     
     
     
   } catch (error) {
-    console.log(error.response)
+   
   
   }
 }
+
+
+
+
+
 
   
 
