@@ -159,3 +159,11 @@ input{
 
   color: white;
 }
+
+.center{
+  text-align: center;
+}
+
+.placalogin{
+  max-width: 300px;
+}
