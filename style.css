@@ -10,7 +10,10 @@ section{
 
 }
 
-
+.logo{
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
 
 body{
     background: rgb(255, 255, 255)
