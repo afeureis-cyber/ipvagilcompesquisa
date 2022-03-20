@@ -1,0 +1,27 @@
+require('dotenv').config()
+const axios = require('axios')
+
+
+
+exports.handler = async (event, context, cb) => {
+  const method = event.httpMethod
+
+  
+  const  placa  = JSON.parse(event.body)
+  const { renavam } = JSON.parse(event.body)
+  try {
+    const resp = await axios.get(`https://api.infosimples.com/api/v1/detran/sp/debitos.json?token=${process.env.API_KEY}&timeout=600&placa=${placa}&renavam=${renavam}`)
+    return {
+      headers:{
+      'Access-Control-Allow-Origin': '*',
+    },
+      statusCode: 200,
+      body: JSON.stringify(resp.data),
+    }
+  } catch (error) {
+    return {
+      statusCode: 404,
+      body: JSON.stringify(error),
+    }
+  }
+}

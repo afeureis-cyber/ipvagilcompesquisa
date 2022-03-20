@@ -30,6 +30,8 @@ const axios = require('axios')
 exports.handler = async (event, context, cb) => {
   const method = event.httpMethod
 
+ 
+
   if (method !== 'POST') {
     return {
       statusCode: 405,
@@ -37,10 +39,10 @@ exports.handler = async (event, context, cb) => {
     }
   }
 
-  const { placa } = JSON.parse(event.body)
-  const { renavam } = JSON.parse(event.body)
+  
+  
   try {
-    const resp = await axios.get(`https://api.infosimples.com/api/v1/detran/sp/debitos.json?token=${process.env.API_KEY}&timeout=600&placa=${placa}&renavam=${renavam}`)
+    const resp = await axios.get(`https://api.infosimples.com/api/v1/detran/sp/debitos.json?token=${process.env.API_KEY}&timeout=600&placa='FQO0023'&renavam='01053051317'`)
     return {
       headers:{
       'Access-Control-Allow-Origin': '*',
